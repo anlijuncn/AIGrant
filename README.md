@@ -26,23 +26,24 @@ Proposal/
         abstract.tex                     # Abstract section
         budget.tex                       # Budget section
         main.tex                         # Main LaTeX entry point
-        main_<id>_<section>.tex          # Section files (example naming)
+        main_<id>_<section>.tex          # Section files
         timeline.tex                     # Timeline / Gantt section
-    references.bib                   # Bibliography
+        references.bib                   # Bibliography
     build.sh                         # Build script to compile the proposal
 Review/                              # AI review prompts, rubrics, and outputs
-    Requirements/                    # Checklists based on grant call criteria
-    R1_Language/                     # Review typos, grammar, and clarity
-    R2_Citation/                     # Review for appropriate and comprehensive citations
-    R3_StateOfTheArt/                # Review for state-of-the-art awareness
-    R4_Innovation/                   # Review for novelty and impact
-    R5_Methodology/                  # Review for methodology feasibility and rigor
-    R6_ResearchFoundation/           # Review for research foundation and preliminary data
-    R7_Critical/                     # Critical review of weaknesses and risks
-    R8_Constructive/                 # Constructive review with suggestions for improvement
-    R9_Significance/                 # Review for significance and potential impact
-    Aggregation/                     # Aggregated review outputs and iteration notes
-    Reviews/                         # Final review outputs and iteration notes
+    GrantRequirements/                   # Checklists based on grant call criteria
+    R1_Language/                         # Review typos, grammar, and clarity
+    R2_Citation/                         # Review for appropriate and comprehensive citations
+    R3_StateOfTheArt/                    # Review for state-of-the-art awareness
+    R4_Innovation/                       # Review for novelty and impact
+    R5_Methodology/                      # Review for methodology feasibility and rigor
+    R6_ResearchFoundation/               # Review for research foundation and preliminary data
+    R7_Critical/                         # Critical review of weaknesses and risks
+    R8_Constructive/                     # Constructive review with suggestions for improvement
+    R9_Significance/                     # Review for significance and potential impact
+    Aggregation/                         # Aggregated review outputs and iteration notes
+    Reviews/                             # Final review outputs and iteration notes
+    config.yaml                          # Configuration for AI review workflow
 ```
 
 ## Getting Started
