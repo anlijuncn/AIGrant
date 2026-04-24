@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Editor files
+.vscode/
+.vscode-upload.json
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.xdv
+
+# Common LaTeX build directories
+logs/
+

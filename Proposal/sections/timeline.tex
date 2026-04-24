@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{sections/setup/packages}
+\input{sections/setup/metadata}
+
+\title{\vspace{-2.2em}\textbf{Project Timeline}\\[0.4em]\large \FundingCall}
+
+\begin{document}
+
+\maketitle
+\vspace{-4.5em}
+
+\section*{Timeline Overview}
+
+The schedule below shows a compact three-year work plan with quarterly
+milestones and validation checkpoints.
+
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{ganttchart}[
+  hgrid,
+  vgrid,
+  x unit=0.9cm,
+  y unit chart=0.7cm,
+  title height=1,
+  bar height=0.55,
+  group height=0.32,
+  group top shift=0.45,
+  group peaks height=0.18,
+  milestone height=0.55,
+  milestone left shift=0.1,
+  milestone right shift=-0.1
+]{1}{12}
+  \gantttitle{Quarter}{12} \\
+  \gantttitlelist{1,...,12}{1} \\
+  \ganttgroup{Year 1}{1}{4} \\
+  \ganttgroup{Year 2}{5}{8} \\
+  \ganttgroup{Year 3}{9}{12} \\
+  \ganttbar{Project setup and approvals}{1}{2} \\
+  \ganttbar{Data collection and harmonization}{2}{5} \\
+  \ganttbar{Model development}{4}{8} \\
+  \ganttbar{Internal validation}{7}{9} \\
+  \ganttbar{Interpretation and reporting}{9}{12} \\
+  \ganttmilestone{Midpoint review}{6} \\
+  \ganttmilestone{Final delivery}{12}
+\end{ganttchart}%
+}
+\end{center}
+
+\section*{Milestones}
+
+\begin{itemize}
+  \item Q1--Q2: project initiation, approvals, and initial data setup.
+  \item Q2--Q5: cohort assembly, quality control, and harmonization.
+  \item Q4--Q8: core analysis or model development.
+  \item Q7--Q9: validation and robustness checks.
+  \item Q9--Q12: interpretation, dissemination, and final reporting.
+\end{itemize}
+
+\end{document}

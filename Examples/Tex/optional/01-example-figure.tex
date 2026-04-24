@@ -1,0 +1,16 @@
+% Insert with \input{optional/01-example-figure} inside a subsection.
+\begin{figure}[H]
+  \centering
+  \IfFileExists{figures/example_figure.pdf}{%
+    \includegraphics[width=0.82\textwidth]{figures/example_figure.pdf}%
+  }{%
+    \fbox{%
+      \parbox[c][4cm][c]{0.78\textwidth}{\centering
+      Placeholder figure: add
+      \texttt{figures/example\_figure.pdf}}%
+    }%
+  }
+  \caption{Example inserted figure. Replace the file with your own
+  figure in \texttt{figures/}.}
+  \label{fig:inserted}
+\end{figure}

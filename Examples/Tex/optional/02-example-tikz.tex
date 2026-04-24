@@ -1,0 +1,25 @@
+% Insert with \input{optional/02-example-tikz} inside a subsection.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  node distance=1.8cm and 1.8cm,
+  box/.style={
+    draw,
+    rounded corners,
+    align=center,
+    minimum width=3.0cm,
+    minimum height=0.9cm
+  },
+  >=Latex
+]
+\node[box] (data) {Cohorts \\ Proteomics + Clinical Data};
+\node[box, right=of data] (model) {Representation \\ Learning Model};
+\node[box, right=of model] (outcome)
+  {Diagnosis / Prognosis \\ Biological Interpretation};
+
+\draw[->] (data) -- (model);
+\draw[->] (model) -- (outcome);
+\end{tikzpicture}
+\caption{Example schematic drawn directly in LaTeX using TikZ.}
+\label{fig:tikz}
+\end{figure}

@@ -1,0 +1,25 @@
+\begin{tikzpicture}[
+  node distance=7mm and 8mm,
+  every node/.style={font=\small},
+  box/.style={
+    draw,
+    rounded corners=2pt,
+    fill=gray!10,
+    minimum width=3.1cm,
+    minimum height=0.9cm,
+    align=center
+  },
+  link/.style={-{Latex[length=2mm]}, thick}
+]
+  \node[box] (need) {Need / significance};
+  \node[box, right=of need] (plan) {Aims and methods};
+  \node[box, right=of plan] (impact) {Validation and impact};
+  \node[box, below=of plan, minimum width=4.0cm] (support)
+    {Feasibility, resources, and timeline};
+
+  \draw[link] (need) -- (plan);
+  \draw[link] (plan) -- (impact);
+  \draw[link] (plan) -- (support);
+  \draw[link] (need.south) |- (support.west);
+  \draw[link] (impact.south) |- (support.east);
+\end{tikzpicture}
