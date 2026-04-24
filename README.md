@@ -4,62 +4,76 @@ A LaTeX grant-writing template with an AI-assisted review workflow.
 
 ## Overview
 
-GrantTemplate helps you organize grant writing into reusable sections, supporting files, and review artifacts so you can:
+GrantTemplate helps you organize grant writing into reusable sections, configurable build settings, and reusable review prompts so you can:
 
 1. Draft proposals in modular LaTeX files.
-2. Keep references, figures, timeline, and budget in a predictable layout.
-3. Run AI-assisted quality checks before submission.
+2. Keep references, figures, abstract, timeline, and budget in a predictable layout.
+3. Build a main proposal PDF plus standalone attachment PDFs.
+4. Run AI-assisted quality checks before submission.
 
 ## Intended structure
 
 The directory tree shown below:
 
 ```text
-CV/                                  # CV templates
-Information/                         # Grant call details and requirements
-Examples/                            # Example proposals
+CV/                                      # CV templates
+Information/                             # Grant call details and requirements
+Examples/                                # Example proposals
 Proposal/
-    figures/                         # Figures and diagrams
-    literatures/                     # Supporting papers and references
-    PDF/                             # Compiled PDFs and logs
-    sections/                        # Modular LaTeX sections
-        abstract.tex                     # Abstract section
-        budget.tex                       # Budget section
+    figures/                             # Figures and diagrams
+    literatures/                         # Supporting papers and references
+    PDF/                                 # Compiled PDFs
+    sections/                            # Modular LaTeX sections
+        abstract.tex                     # Standalone abstract PDF source
+        budget.tex                       # Standalone budget PDF source
         main.tex                         # Main LaTeX entry point
         main_<id>_<section>.tex          # Section files
-        timeline.tex                     # Timeline / Gantt section
+        timeline.tex                     # Standalone timeline / Gantt PDF source
+        setup/                           # Shared LaTeX setup files
         references.bib                   # Bibliography
-    build.sh                         # Build script to compile the proposal
-Review/                              # AI review prompts, rubrics, and outputs
-    GrantRequirements/                   # Checklists based on grant call criteria
+    build.sh                             # Build script to compile the proposal
+    generate_tex_config.py               # YAML -> TeX config generator
+    tex_config.yaml                      # User-editable metadata and layout settings
+Review/                                  # AI review prompts, rubrics, examples, and outputs
+    examples/nsfc-reviewers/             # Reference skill and reviewer examples
     R1_Language/                         # Review typos, grammar, and clarity
     R2_Citation/                         # Review for appropriate and comprehensive citations
     R3_StateOfTheArt/                    # Review for state-of-the-art awareness
     R4_Innovation/                       # Review for novelty and impact
-    R5_Methodology/                      # Review for methodology feasibility and rigor
-    R6_ResearchFoundation/               # Review for research foundation and preliminary data
-    R7_Critical/                         # Critical review of weaknesses and risks
+    R5_Hypothesis/                       # Review for hypothesis clarity and testability
+    R6_Methodology/                      # Review for methodology feasibility and rigor
+    R7_ResearchFoundation/               # Review for research foundation and preliminary data
+    R8_Critical/                         # Critical review of weaknesses and risks
     R8_Constructive/                     # Constructive review with suggestions for improvement
-    R9_Significance/                     # Review for significance and potential impact
-    Aggregation/                         # Aggregated review outputs and iteration notes
+    R10_Significance/                    # Review for significance and potential impact
+    Aggergation/                         # Reserved for aggregated review notes
+    Requirements/                        # Reserved for grant-specific review checklists
     Reviews/                             # Final review outputs and iteration notes
-    config.yaml                          # Configuration for AI review workflow
+    metaReviewer.md                      # Master reviewer template
+    README.md                            # Review usage guide
 ```
 
 ## Getting Started
 
-1. Read and modify all `instructions.md` files to fit the specific grant call you are targeting.
-2. Add your proposal text into `grant/proposal/*.tex` files.
-3. Keep citations in `grant/proposal/references.bib`.
-4. Build from `grant/proposal/main.tex`.
-5. Use the `grant/review/` directory to store AI review prompts, outputs, and iteration notes as you refine your proposal.
-6. Iterate on the proposal based on AI feedback until you have a polished final version ready for submission.
+1. Edit [Proposal/tex_config.yaml](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/tex_config.yaml:1) to set the proposal title, applicant name, affiliation, and layout parameters.
+   `Proposal/build.sh` expects `python3`, `latexmk`, and a working LaTeX installation in your shell path.
+2. Write or replace content in `Proposal/sections/main_<id>_<section>.tex`.
+3. Update [Proposal/sections/references.bib](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/sections/references.bib:1) with your citations.
+4. Build from [Proposal/build.sh](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/build.sh:1). This produces:
+   - `Proposal/PDF/main.pdf`
+   - `Proposal/PDF/abstract.pdf`
+   - `Proposal/PDF/timeline.pdf`
+   - `Proposal/PDF/budget.pdf`
+5. Use the reviewer prompts in `Review/RX_XXX/` to generate targeted review notes into `Review/Reviews/`.
+6. Iterate on the proposal until both the writing and the reviewer outputs are in good shape.
 
 ## Customization
 
-- Modify the LaTeX templates in `grant/proposal/` to match the formatting requirements of your target grant.
-- Update the AI review prompts in `grant/review/` to align with the specific evaluation criteria of the grant call.
-- Add any additional sections or supporting files as needed to strengthen your proposal
+- Adjust fonts, spacing, title block content, and margins in [Proposal/tex_config.yaml](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/tex_config.yaml:1).
+- Use a YAML block scalar (`|`) for multi-line title fields in `tex_config.yaml` so line breaks become proper TeX title breaks.
+- Modify the reviewer instructions under `Review/RX_XXX/` to match the evaluation criteria of your target funder.
+- Use `Review/examples/nsfc-reviewers/` as a richer reference if you want a more automated or agency-specific review workflow.
+- Add any additional proposal sections, figures, or reviewer roles as needed.
 
 # Acknowledgements
 

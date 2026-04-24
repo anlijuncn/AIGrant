@@ -1,4 +1,7 @@
-\documentclass[11pt,a4paper]{article}
+% Main proposal entry point.
+% Build this file through ../build.sh so YAML settings are converted to TeX.
+\input{sections/setup/generated_config}
+\documentclass{article}
 
 \input{sections/setup/packages}
 \input{sections/setup/metadata}
@@ -6,9 +9,8 @@
 \begin{document}
 
 \maketitle
-\vspace{-6em}
+\vspace{\MainTitleBottomVSpace}
 
-\input{sections/abstract}
 \input{sections/main_01_background}
 \input{sections/main_02_preliminary_work}
 \input{sections/main_03_aim}
@@ -21,7 +23,7 @@
 \input{sections/main_10_ethics}
 \input{sections/main_11_citations_in_text}
 
-\bibliographystyle{unsrtnat}
+\bibliographystyle{\BibliographyStyle}
 \bibliography{sections/references}
 
 \end{document}

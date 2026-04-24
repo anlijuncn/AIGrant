@@ -1,3 +1,19 @@
+% Standalone abstract PDF for sponsors that request a separate summary page.
+\input{sections/setup/generated_config}
+\documentclass{article}
+
+\input{sections/setup/packages}
+\input{sections/setup/metadata}
+
+\title{\vspace{\TitleTopVSpace}\textbf{\AbstractTitle}\\[0.5em]
+\normalsize \ApplicantName\\
+\normalsize \ApplicantAffiliation}
+
+\begin{document}
+
+\maketitle
+\vspace{\StandaloneTitleBottomVSpace}
+
 \begin{abstract}
 
 Summarize the problem, the gap in current knowledge or practice, the
@@ -5,3 +21,5 @@ central hypothesis, and the expected impact of the project. Keep this
 section concise and readable for non-specialist reviewers.
 
 \end{abstract}
+
+\end{document}

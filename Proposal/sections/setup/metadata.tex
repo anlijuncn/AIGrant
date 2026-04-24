@@ -1,21 +1,19 @@
+% Shared running header and title metadata.
+% Edit tex_config.yaml to change the values used here.
 \pagestyle{fancy}
 \fancyhf{}
-
-\newcommand{\ApplicantName}{Your Name}
-\newcommand{\ProjectShortTitle}{Demo Grant Template}
-\newcommand{\FundingCall}{Demonstration Funding Call}
 
 \fancyhead[L]{\footnotesize \ApplicantName}
 \fancyhead[R]{\footnotesize \ProjectShortTitle}
 \fancyfoot[C]{\footnotesize \thepage}
 
-\renewcommand{\headrulewidth}{0.3pt}
-\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{\HeaderRuleWidth}
+\renewcommand{\footrulewidth}{\FooterRuleWidth}
 
-\title{\vspace{-2.2em}\textbf{
-Demo Proposal Title:
-Compact Grant Narrative Template
+\title{\vspace{\TitleTopVSpace}\textbf{
+\ProposalTitle
 }\\[0.5em]
-\large \FundingCall}
+\normalsize \ApplicantName\\
+\normalsize \ApplicantAffiliation}
 \author{}
 \date{}

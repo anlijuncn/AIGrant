@@ -1,0 +1,47 @@
+# User-editable proposal configuration.
+# Update this file, then run ./build.sh to regenerate PDFs and TeX settings.
+
+metadata:
+  applicant_name: "Your Name"
+  affiliation: "Your Institution"
+  project_short_title: "Demo Grant Template"
+  proposal_title: |
+    Demo Proposal Title:
+    Compact Grant Narrative Template
+  abstract_title: "Project Abstract"
+  timeline_title: "Project Timeline"
+  budget_title: "Budget Summary"
+
+document:
+  font_size: "11pt"
+  paper_size: "a4paper"
+
+layout:
+  title_top_vspace: "-2.2em"
+  main_title_bottom_vspace: "-6em"
+  standalone_title_bottom_vspace: "-4.5em"
+  line_spacing: "0.98"
+  paragraph_indent: "0pt"
+  paragraph_skip: "3pt"
+  margin_left: "1.5cm"
+  margin_right: "1.5cm"
+  margin_top: "1.5cm"
+  margin_bottom: "1.5cm"
+  headheight: "14pt"
+  headsep: "8pt"
+  footskip: "14pt"
+  caption_skip: "3pt"
+  textfloat_sep: "8pt plus 1pt minus 1pt"
+  float_sep: "6pt plus 1pt minus 1pt"
+  intext_sep: "6pt plus 1pt minus 1pt"
+  section_before_space: "5pt plus 1pt minus 1pt"
+  section_after_space: "2pt"
+  subsection_before_space: "4pt plus 1pt minus 1pt"
+  subsection_after_space: "2pt"
+  subsubsection_before_space: "3pt plus 1pt minus 1pt"
+  subsubsection_after_space: "1pt"
+  header_rule_width: "0.3pt"
+  footer_rule_width: "0pt"
+
+bibliography:
+  style: "unsrtnat"

@@ -1,14 +1,18 @@
-\documentclass[11pt,a4paper]{article}
+% Standalone timeline PDF with a compact Gantt chart.
+\input{sections/setup/generated_config}
+\documentclass{article}
 
 \input{sections/setup/packages}
 \input{sections/setup/metadata}
 
-\title{\vspace{-2.2em}\textbf{Project Timeline}\\[0.4em]\large \FundingCall}
+\title{\vspace{\TitleTopVSpace}\textbf{\TimelineTitle}\\[0.5em]
+\normalsize \ApplicantName\\
+\normalsize \ApplicantAffiliation}
 
 \begin{document}
 
 \maketitle
-\vspace{-4.5em}
+\vspace{\StandaloneTitleBottomVSpace}
 
 \section*{Timeline Overview}
 

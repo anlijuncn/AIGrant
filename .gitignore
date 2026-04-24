@@ -4,6 +4,8 @@
 # Editor files
 .vscode/
 .vscode-upload.json
+__pycache__/
+*.pyc
 
 # LaTeX build artifacts
 *.aux
@@ -26,3 +28,6 @@
 # Common LaTeX build directories
 logs/
 
+# Generated proposal artifacts
+/Proposal/PDF/
+/Proposal/sections/setup/generated_config.tex

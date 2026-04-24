@@ -1,3 +1,5 @@
+% Shared package and spacing configuration for all proposal PDFs.
+% Layout values are injected from sections/setup/generated_config.tex.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -5,20 +7,20 @@
 \usepackage[english]{babel}
 
 \usepackage[
-  a4paper,
-  left=1.7cm,
-  right=1.7cm,
-  top=2.0cm,
-  bottom=2.0cm,
-  headheight=14pt,
-  headsep=8pt,
-  footskip=14pt
+  \PaperSize,
+  left=\MarginLeft,
+  right=\MarginRight,
+  top=\MarginTop,
+  bottom=\MarginBottom,
+  headheight=\HeadHeight,
+  headsep=\HeadSep,
+  footskip=\FootSkip
 ]{geometry}
 
 \usepackage{setspace}
-\setstretch{0.98}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\setstretch{\LineStretchValue}
+\setlength{\parindent}{\ParagraphIndent}
+\setlength{\parskip}{\ParagraphSkip}
 
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{bm}
@@ -28,7 +30,7 @@
 \usepackage{caption}
 \captionsetup{
   font=small,
-  skip=3pt
+  skip=\CaptionSkip
 }
 \usepackage{subcaption}
 \usepackage{booktabs}
@@ -49,9 +51,9 @@
 \patchcmd{\thebibliography}{\section*{\refname}}
   {\section*{\centering\refname}}{}{}
 \setlength{\bibsep}{0pt}
-\setlength{\textfloatsep}{8pt plus 1pt minus 1pt}
-\setlength{\floatsep}{6pt plus 1pt minus 1pt}
-\setlength{\intextsep}{6pt plus 1pt minus 1pt}
+\setlength{\textfloatsep}{\TextFloatSep}
+\setlength{\floatsep}{\FloatSep}
+\setlength{\intextsep}{\InTextSep}
 
 \usepackage{titlesec}
 \titleformat{\section}
@@ -63,9 +65,9 @@
 \titleformat{\subsubsection}
   {\normalfont\normalsize\itshape}
   {\thesubsubsection}{0.5em}{}
-\titlespacing*{\section}{0pt}{5pt plus 1pt minus 1pt}{2pt}
-\titlespacing*{\subsection}{0pt}{4pt plus 1pt minus 1pt}{2pt}
-\titlespacing*{\subsubsection}{0pt}{3pt plus 1pt minus 1pt}{1pt}
+\titlespacing*{\section}{0pt}{\SectionBeforeSpace}{\SectionAfterSpace}
+\titlespacing*{\subsection}{0pt}{\SubsectionBeforeSpace}{\SubsectionAfterSpace}
+\titlespacing*{\subsubsection}{0pt}{\SubsubsectionBeforeSpace}{\SubsubsectionAfterSpace}
 \setcounter{secnumdepth}{3}
 
 \usepackage{enumitem}

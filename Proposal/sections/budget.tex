@@ -1,14 +1,18 @@
-\documentclass[11pt,a4paper]{article}
+% Standalone budget PDF for calls that require a separate attachment.
+\input{sections/setup/generated_config}
+\documentclass{article}
 
 \input{sections/setup/packages}
 \input{sections/setup/metadata}
 
-\title{\vspace{-2.2em}\textbf{Budget Summary}\\[0.4em]\large \FundingCall}
+\title{\vspace{\TitleTopVSpace}\textbf{\BudgetTitle}\\[0.5em]
+\normalsize \ApplicantName\\
+\normalsize \ApplicantAffiliation}
 
 \begin{document}
 
 \maketitle
-\vspace{-4.5em}
+\vspace{\StandaloneTitleBottomVSpace}
 
 \section*{Budget}
 
