@@ -1,6 +1,6 @@
-# GrantTemplate
+# AI for grant writing
 
-A LaTeX grant-writing template with an AI-assisted review workflow.
+A LaTeX grant-writing workflow with an AI-assisted reviewers.
 
 ## Overview
 
