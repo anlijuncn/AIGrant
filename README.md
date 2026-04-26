@@ -4,7 +4,7 @@ A LaTeX grant-writing workflow with an AI-assisted reviewers.
 
 ## Overview
 
-GrantTemplate helps you organize grant writing into reusable sections, configurable build settings, and reusable review prompts so you can:
+This repository helps you organize grant writing into reusable sections, configurable build settings, and reusable review prompts so you can:
 
 1. Draft proposals in modular LaTeX files.
 2. Keep references, figures, abstract, timeline, and budget in a predictable layout.
@@ -55,26 +55,26 @@ Review/                                  # AI review prompts, rubrics, examples,
 
 ## Getting Started
 
-1. Edit [Proposal/tex_config.yaml](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/tex_config.yaml:1) to set the proposal title, applicant name, affiliation, and layout parameters.
+1. Edit [Proposal/tex_config.yaml](./Proposal/tex_config.yaml:1) to set the proposal title, applicant name, affiliation, and layout parameters.
    `Proposal/build.sh` expects `python3`, `latexmk`, and a working LaTeX installation in your shell path.
 2. Write or replace content in `Proposal/sections/main_<id>_<section>.tex`.
-3. Update [Proposal/sections/references.bib](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/sections/references.bib:1) with your citations.
-4. Build from [Proposal/build.sh](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/build.sh:1). This produces:
+3. Update [Proposal/sections/references.bib](./Proposal/sections/references.bib:1) with your citations.
+4. Build from [Proposal/build.sh](./Proposal/build.sh:1). This produces:
    - `Proposal/PDF/main.pdf`
    - `Proposal/PDF/abstract.pdf`
    - `Proposal/PDF/timeline.pdf`
    - `Proposal/PDF/budget.pdf`
-5. Use the reviewer prompts in `Review/RX_XXX/` to generate targeted review notes into `Review/Reviews/`.
+5. Use the reviewer prompts in `AIReview/RX_XXX/` to generate targeted review notes into `AIReview/Reviews/`.
 6. Iterate on the proposal until both the writing and the reviewer outputs are in good shape.
 
 ## Customization
 
-- Adjust fonts, spacing, title block content, and margins in [Proposal/tex_config.yaml](/Users/an/Documents/git/anlijuncn/GrantTemplate/Proposal/tex_config.yaml:1).
+- Adjust fonts, spacing, title block content, and margins in [Proposal/tex_config.yaml](./Proposal/tex_config.yaml:1).
 - Use a YAML block scalar (`|`) for multi-line title fields in `tex_config.yaml` so line breaks become proper TeX title breaks.
-- Modify the reviewer instructions under `Review/RX_XXX/` to match the evaluation criteria of your target funder.
-- Use `Review/examples/nsfc-reviewers/` as a richer reference if you want a more automated or agency-specific review workflow.
+- Modify the reviewer instructions under `AIReview/RX_XXX/` to match the evaluation criteria of your target funder.
+- Use `AIReview/metaReviewer.md` as the canonical template for defining a reviewer persona.
 - Add any additional proposal sections, figures, or reviewer roles as needed.
 
 # Acknowledgements
 
-Thanks to https://github.com/huangwb8/ChineseResearchLaTeX for providing flexible and adaptable for various grant writing needs, and we encourage contributions and improvements from the community.
+Thanks to [ChineseResearchLaTeX](https://github.com/huangwb8/ChineseResearchLaTeX) for providing flexible and adaptable for various grant writing needs, and we encourage contributions and improvements from the community.
